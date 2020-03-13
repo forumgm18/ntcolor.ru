@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="flags.css">
+</head>
+<body>
+
+<div class="tfmi tfmi-dropdown">
+    <div class="tfmi-flag-container">
+        <div class="tfmi-selected-flag" role="combobox" aria-owns="country-listbox" tabindex="0" title="United States: +1">
+            <div class="tfmi-flag icon-flag-us"></div>
+            <div class="tfmi-arrow"></div>
+        </div>
+        <ul class="tfmi-country-list tfmi-hide" id="country-listbox" role="listbox">
+            <li class="tfmi-country tfmi-standard" tabindex="-1" id="flag-id-ru" role="option" data-dial-code="7" data-country-code="ru">
+                <div class="tfmi-flag-box">
+                    <div class="tfmi-flag icon-flag-ru"></div>
+                </div>
+                <span class="tfmi-country-name">Russia (Россия)</span>
+                <span class="tfmi-dial-code">+7</span>
+            </li>
+            <li class="tfmi-country tfmi-preferred tfmi-active" tabindex="-1" id="flag-id-us" role="option" data-dial-code="1" data-country-code="us" >
+                <div class="tfmi-flag-box">
+                    <div class="tfmi-flag icon-flag-us"></div>
+                </div>
+                <span class="tfmi-country-name">United States</span>
+                <span class="tfmi-dial-code">+1</span>
+            </li>
+            <li class="tfmi-divider" role="separator" aria-disabled="true"></li>
+            <li class="tfmi-country tfmi-preferred" tabindex="-1" id="flag-id-gb" role="option" data-dial-code="44" data-country-code="gb"><div class="tfmi-flag-box"><div class="tfmi-flag icon-flag-gb"></div></div><span class="tfmi-country-name">United Kingdom</span><span class="tfmi-dial-code">+44</span></li>
+            <li class="tfmi-country tfmi-standard" tabindex="-1" id="flag-id-af" role="option" data-dial-code="93" data-country-code="af"><div class="tfmi-flag-box"><div class="tfmi-flag icon-flag-af"></div></div><span class="tfmi-country-name">Afghanistan (‫افغانستان‬‎)</span><span class="tfmi-dial-code">+93</span></li>
+        </ul>
+    </div>
+    <input type="tel" id="phone" class="form-control" autocomplete="off" data-intl-tel-input-id="0" placeholder="(201) 555-0123">
+</div>
+
+<script>
+
+    input.onblur = function() {
+        if (!input.value.includes('@')) { // не email
+            input.classList.add('invalid');
+            error.innerHTML = 'Пожалуйста, введите правильный email.'
+        }
+    };
+
+    input.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+            // удаляем индикатор ошибки, т.к. пользователь хочет ввести данные заново
+            this.classList.remove('invalid');
+            error.innerHTML = "";
+        }
+    };
+
+</script>
+
+</body>
+</html>
